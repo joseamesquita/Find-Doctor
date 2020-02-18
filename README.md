@@ -30,7 +30,7 @@ _Installing your personal API Key_
 Behavior | Input | Output
 --- | --- | ---
 if the user leaves the input blank | "" | Please insert symptom and name 
-user inputs a symtpom and receives a list of doctors in Portland to treat the symptom | "cough" | returns list of doctors that treat "cough" symptom
+user inputs a symptom and receives a list of doctors in Portland to treat the symptom | "cough" | returns list of doctors that treat "cough" symptom
 user inputs a name and receives a list of doctors in Portland with the name given | "diaz" | returns a list of doctors that inlude 'diaz' in first or last name
 
 ## Known Bugs
