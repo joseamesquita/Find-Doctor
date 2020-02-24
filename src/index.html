@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Find A Doctor</title>
-    </head>
-    <body>
-        <div class="container">
-            <h1>Find A Doctor</h1>
+
+<head>
+    <title>Find A Doctor</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Find A Doctor</h1>
+        <form id="search">
             <div class="form">
                 <label for="symptom">Search Symptom:</label>
-                <input  class="input" type="text" size="50"> <br>
+                <input id="inputSymptom" type="text" size="50"> <br>
                 <label for="name">Search Name:</label>
-                <input class="input" type="text" size="25">
+                <input id="inputName" type="text" size="25">
             </div>
             <button class="find">Find a Doctor</button>
-        </div>
-        <div class="result"></div>
+        </form>
+        <p><span id="result"></span></p>
+        <ul id="listDoctors"></ul>
+    </div>
 
-    </body>
+</body>
+
 </html>
