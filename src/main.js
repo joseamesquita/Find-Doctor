@@ -22,11 +22,12 @@ $(document).ready(function () {
         $("ul#listDoctors").append("No Doctors available");
       } else if (response.data.length > 0) {
         for (let i = 0; i < response.data.length; i++) {
-          // response.data.forEach(function (doctors) {
-          // });
+          response.data.forEach(function (doctors) {
+            $("ul#result").append(`<li>${doctors.profile.first_name} ${doctors.profile.last_name} ${doctors.practices[0].visit_address.city} ${doctors.practices[0].visit_address.state} ${doctors.practices[0].visit_address.street} ${doctors.practices[0].visit_address.zip} ${doctors.practices[0].phones[0].number}</li > `);
+          });
         }
       }
-      $("result").show();
+      $("#outcome").show();
     }
   });
 });
