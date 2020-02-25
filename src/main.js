@@ -6,24 +6,23 @@ import { findDoctor } from './find-doctor.js';
 $(document).ready(function () {
   $("#search").submit(function (event) {
     event.preventDefault();
-    const query = $("#inputSymptom").val();
+    const query = $("#input").val();
 
     (async () => {
       let search = new findDoctor();
       const response = await search.getSymptom(query);
-      console.log(response);
       getElements(response);
     })();
 
     function getElements(response) {
       if (response == false) {
         $("#result").text("error");
-      } else if (response.data === 0) {
-        $("ul#listDoctors").append("No Doctors available");
+      } else if (response.data.length === 0) {
+        $("#outcome").append(`No Doctors available`);
       } else if (response.data.length > 0) {
         for (let i = 0; i < response.data.length; i++) {
           response.data.forEach(function (doctors) {
-            $("ul#result").append(`<li>${doctors.profile.first_name} ${doctors.profile.last_name} ${doctors.practices[0].visit_address.city} ${doctors.practices[0].visit_address.state} ${doctors.practices[0].visit_address.street} ${doctors.practices[0].visit_address.zip} ${doctors.practices[0].phones[0].number}</li > `);
+            $("ul#result").append(`<li>${doctors.profile.first_name} ${doctors.profile.last_name} ${doctors.practices[0].visit_address.city} ${doctors.practices[0].visit_address.state} ${doctors.practices[0].visit_address.street} ${doctors.practices[0].visit_address.zip} ${doctors.practices[0].phones[0].number}</li> `);
           });
         }
       }
