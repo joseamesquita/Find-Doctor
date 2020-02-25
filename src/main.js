@@ -23,7 +23,7 @@ $(document).ready(function () {
       } else if (response.data.length > 0) {
         for (let i = 0; i < response.data.length; i++) {
           response.data.forEach(function (doctors) {
-            $("ul#result").append(`<li>${doctors.profile.first_name} ${doctors.profile.last_name} ${doctors.practices[0].visit_address.city} ${doctors.practices[0].visit_address.state} ${doctors.practices[0].visit_address.street} ${doctors.practices[0].visit_address.zip} ${doctors.practices[0].phones[0].number}</li> `);
+            $("ul#result").append(`<li>${"Name: "}${doctors.profile.first_name} ${doctors.profile.last_name} <br> ${"Address: "} ${doctors.practices[0].visit_address.street} ${doctors.practices[0].visit_address.city + ", "} ${doctors.practices[0].visit_address.state} ${doctors.practices[0].visit_address.zip} <br> ${"Phone Number: "}${doctors.practices[0].phones[0].number} <br> ${"Website: " + doctors.practices[0].website} <br> ${"Current accepting new patients: " + doctors.practices[0].accepts_new_patients} <br> </li > `);
           });
         }
       }
