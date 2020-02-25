@@ -2,6 +2,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { findDoctor } from './find-doctor.js';
+import './styles.css';
 
 $(document).ready(function () {
   $("#search").submit(function (event) {
