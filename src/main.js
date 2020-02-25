@@ -16,7 +16,10 @@ $(document).ready(function () {
     })();
 
     function getElements(response) {
-      if (response.data.length === 0) {
+        if (!response){
+          $("#outcome").append("Error: cannot reach request.");
+        }
+        else if (response.data.length === 0) {
         $("#outcome").append(`No Doctors available, please enter your symptom and/or name of Doctor of your preference.`);
       } else if (response.data.length > 0) {
         for (let i = 0; i < response.data.length; i++) {
