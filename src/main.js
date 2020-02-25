@@ -16,10 +16,8 @@ $(document).ready(function () {
     })();
 
     function getElements(response) {
-      if (response == false) {
-        $("#result").text("error");
-      } else if (response.data.length === 0) {
-        $("#outcome").append(`No Doctors available`);
+      if (response.data.length === 0) {
+        $("#outcome").append(`No Doctors available, please enter your symptom and/or name of Doctor of your preference.`);
       } else if (response.data.length > 0) {
         for (let i = 0; i < response.data.length; i++) {
           response.data.forEach(function (doctors) {
@@ -28,6 +26,7 @@ $(document).ready(function () {
         }
       }
       $("#outcome").show();
+
     }
   });
 });

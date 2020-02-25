@@ -29,9 +29,10 @@ _Installing your personal API Key_
 
 Behavior | Input | Output
 --- | --- | ---
-if the user leaves the input blank | "" | Please insert symptom and name 
-user inputs a symptom and receives a list of doctors in Portland to treat the symptom | "cough" | returns list of doctors that treat "cough" symptom
-user inputs a name and receives a list of doctors in Portland with the name given | "diaz" | returns a list of doctors that inlude 'diaz' in first or last name
+if the user leaves the input blank | "" | No Doctors available, please enter your symptom and/or name of Doctor of your preference.
+user inputs a city | "Portland" | return a list of doctors in the Portland area
+user inputs a symptom and/name receives a list of doctors in Portland to treat the symptom | "Jose" | returns list of doctors that includes the keyword Jose 
+API Call request | 401 | return error message
 
 ## Known Bugs
 
