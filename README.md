@@ -32,7 +32,7 @@ Behavior | Input | Output
 if the user leaves the input blank | "" | No Doctors available, please enter your symptom and/or name of Doctor of your preference.
 user inputs a city | "Portland" | return a list of doctors in the Portland area
 user inputs a symptom and/name receives a list of doctors in Portland to treat the symptom | "Jose" | returns list of doctors that includes the keyword Jose 
-API Call request | 401 | return error message
+API Call request | Error 401 Unauthorized | returns Error requests, try again.
 
 ## Known Bugs
 
